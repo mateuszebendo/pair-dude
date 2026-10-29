@@ -1,0 +1,293 @@
+{
+  "name": "pair-dude",
+  "displayName": "Pair Dude",
+  "description": "Pareamento guiado no VS Code com passos ancorados no código, comentários e diagramas.",
+  "version": "0.4.1",
+  "publisher": "mateus-zebendo",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./src/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "pairGuide",
+          "title": "Pair Dude",
+          "icon": "resources/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "pairGuide": [
+        {
+          "id": "pairGuide.steps",
+          "name": "Roteiro"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "pairGuide.steps",
+        "contents": "Nenhuma sessão carregada.\nPeça ao Claude para iniciar um pareamento com a skill pair-dude.\n[Abrir pasta de sessões](command:pairGuide.openDataDir)\n[Escolher sessão](command:pairGuide.pickSession)"
+      }
+    ],
+    "commands": [
+      {
+        "command": "pairGuide.next",
+        "title": "Próximo passo",
+        "category": "Pair Dude",
+        "icon": "$(arrow-right)"
+      },
+      {
+        "command": "pairGuide.prev",
+        "title": "Passo anterior",
+        "category": "Pair Dude",
+        "icon": "$(arrow-left)"
+      },
+      {
+        "command": "pairGuide.understood",
+        "title": "Entendi",
+        "category": "Pair Dude",
+        "icon": "$(check)"
+      },
+      {
+        "command": "pairGuide.approve",
+        "title": "Aprovar",
+        "category": "Pair Dude",
+        "icon": "$(pass)"
+      },
+      {
+        "command": "pairGuide.requestChange",
+        "title": "Pedir ajuste",
+        "category": "Pair Dude",
+        "icon": "$(request-changes)"
+      },
+      {
+        "command": "pairGuide.reply",
+        "title": "Perguntar / comentar",
+        "category": "Pair Dude"
+      },
+      {
+        "command": "pairGuide.goto",
+        "title": "Ir para o passo",
+        "category": "Pair Dude"
+      },
+      {
+        "command": "pairGuide.openDiagram",
+        "title": "Ampliar diagrama",
+        "category": "Pair Dude"
+      },
+      {
+        "command": "pairGuide.callClaude",
+        "title": "Chamar o Claude",
+        "category": "Pair Dude",
+        "icon": "$(sparkle)"
+      },
+      {
+        "command": "pairGuide.pickStep",
+        "title": "Escolher passo",
+        "category": "Pair Dude",
+        "icon": "$(list-selection)"
+      },
+      {
+        "command": "pairGuide.pickSession",
+        "title": "Escolher sessão",
+        "category": "Pair Dude",
+        "icon": "$(history)"
+      },
+      {
+        "command": "pairGuide.showSummary",
+        "title": "Mostrar resumo da sessão",
+        "category": "Pair Dude",
+        "icon": "$(book)"
+      },
+      {
+        "command": "pairGuide.openDataDir",
+        "title": "Abrir pasta de sessões",
+        "category": "Pair Dude",
+        "icon": "$(folder-opened)"
+      },
+      {
+        "command": "pairGuide.hide",
+        "title": "Ocultar balão e destaques",
+        "category": "Pair Dude",
+        "icon": "$(eye-closed)"
+      }
+    ],
+    "menus": {
+      "comments/commentThread/title": [
+        {
+          "command": "pairGuide.prev",
+          "group": "navigation@1",
+          "when": "commentController == pair-guide"
+        },
+        {
+          "command": "pairGuide.next",
+          "group": "navigation@2",
+          "when": "commentController == pair-guide"
+        },
+        {
+          "command": "pairGuide.understood",
+          "group": "navigation@3",
+          "when": "commentController == pair-guide"
+        },
+        {
+          "command": "pairGuide.approve",
+          "group": "navigation@4",
+          "when": "commentController == pair-guide"
+        },
+        {
+          "command": "pairGuide.callClaude",
+          "group": "navigation@5",
+          "when": "commentController == pair-guide"
+        }
+      ],
+      "comments/commentThread/context": [
+        {
+          "command": "pairGuide.reply",
+          "group": "inline@1",
+          "when": "commentController == pair-guide"
+        },
+        {
+          "command": "pairGuide.requestChange",
+          "group": "inline@2",
+          "when": "commentController == pair-guide"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "pairGuide.prev",
+          "group": "navigation@1",
+          "when": "resourceScheme == pair-guide"
+        },
+        {
+          "command": "pairGuide.next",
+          "group": "navigation@2",
+          "when": "resourceScheme == pair-guide"
+        },
+        {
+          "command": "pairGuide.understood",
+          "group": "navigation@3",
+          "when": "resourceScheme == pair-guide"
+        },
+        {
+          "command": "pairGuide.approve",
+          "group": "navigation@4",
+          "when": "resourceScheme == pair-guide"
+        },
+        {
+          "command": "pairGuide.requestChange",
+          "group": "navigation@5",
+          "when": "resourceScheme == pair-guide"
+        }
+      ],
+      "view/title": [
+        {
+          "command": "pairGuide.pickSession",
+          "group": "navigation@1",
+          "when": "view == pairGuide.steps"
+        },
+        {
+          "command": "pairGuide.showSummary",
+          "group": "navigation@2",
+          "when": "view == pairGuide.steps"
+        },
+        {
+          "command": "pairGuide.hide",
+          "group": "navigation@3",
+          "when": "view == pairGuide.steps"
+        },
+        {
+          "command": "pairGuide.openDataDir",
+          "group": "overflow@1",
+          "when": "view == pairGuide.steps"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "pairGuide.understood",
+          "group": "decision@1",
+          "when": "view == pairGuide.steps && viewItem == step"
+        },
+        {
+          "command": "pairGuide.approve",
+          "group": "decision@2",
+          "when": "view == pairGuide.steps && viewItem == step"
+        },
+        {
+          "command": "pairGuide.requestChange",
+          "group": "decision@3",
+          "when": "view == pairGuide.steps && viewItem == step"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "pairGuide.next",
+        "key": "ctrl+alt+n",
+        "when": "pairGuide.active"
+      },
+      {
+        "command": "pairGuide.prev",
+        "key": "ctrl+alt+p",
+        "when": "pairGuide.active"
+      },
+      {
+        "command": "pairGuide.understood",
+        "key": "ctrl+alt+u",
+        "when": "pairGuide.active"
+      },
+      {
+        "command": "pairGuide.pickStep",
+        "key": "ctrl+alt+l",
+        "when": "pairGuide.active"
+      }
+    ],
+    "configuration": {
+      "title": "Pair Dude",
+      "properties": {
+        "pairGuide.dataDir": {
+          "type": "string",
+          "default": "",
+          "description": "Pasta de dados do Pair Dude. Vazio usa ~/.pair-guide."
+        },
+        "pairGuide.autoAdvance": {
+          "type": "boolean",
+          "default": true,
+          "description": "Avança para o próximo passo após marcar Entendi ou Aprovar."
+        },
+        "pairGuide.autoOpenNewSessions": {
+          "type": "boolean",
+          "default": true,
+          "description": "Abre automaticamente uma sessão nova criada pelo Claude."
+        },
+        "pairGuide.browserPath": {
+          "type": "string",
+          "default": "",
+          "description": "Caminho do Edge/Chrome usado para renderizar diagramas Mermaid. Vazio detecta automaticamente."
+        },
+        "pairGuide.richText": {
+          "type": "boolean",
+          "default": true,
+          "description": "Colore código inline e usa selos coloridos nos balões (HTML restrito do VS Code). Desative se algo aparecer quebrado."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "package": "npm run check && vsce package --no-dependencies --allow-missing-repository --out ../dist/pair-dude.vsix"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^3.2.1"
+  }
+}
