@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="390" viewBox="0 0 1200 390" role="img" aria-label="Pair Dude, pair programming guiado no seu código">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#10162a"/>
+      <stop offset=".55" stop-color="#172348"/>
+      <stop offset="1" stop-color="#15213b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#70e1c5"/>
+      <stop offset="1" stop-color="#77a8ff"/>
+    </linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="14" stdDeviation="22" flood-color="#070b18" flood-opacity=".35"/></filter>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#ffffff" opacity=".075"/></pattern>
+  </defs>
+  <rect width="1200" height="390" rx="24" fill="url(#bg)"/>
+  <rect width="1200" height="390" rx="24" fill="url(#dots)"/>
+  <circle cx="1015" cy="15" r="270" fill="#4a75c8" opacity=".10"/>
+  <circle cx="60" cy="390" r="170" fill="#6bd7b7" opacity=".07"/>
+
+  <g transform="translate(65 78)">
+    <rect width="62" height="62" rx="17" fill="url(#accent)"/>
+    <path d="M17 19h28v20H30l-8 7v-7h-5z" fill="none" stroke="#142341" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M24 27h14M24 33h10" stroke="#142341" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="82" y="46" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="49" font-weight="800" letter-spacing="-2" fill="#f7fbff">Pair <tspan fill="#78d9d1">Dude</tspan></text>
+    <text x="2" y="111" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" font-weight="500" fill="#dce7fa">Pareamento guiado, dentro do seu código.</text>
+    <text x="2" y="148" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" fill="#a9bad5">Entenda mudanças. Revise decisões. Avance no seu ritmo.</text>
+    <g transform="translate(2 185)" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="600">
+      <rect width="140" height="35" rx="17.5" fill="#2b405d" stroke="#6384a2" opacity=".9"/>
+      <text x="18" y="23" fill="#defaf0">●  VS Code</text>
+      <rect x="152" width="154" height="35" rx="17.5" fill="#2b405d" stroke="#6384a2" opacity=".9"/>
+      <text x="170" y="23" fill="#e4ecff">✦  Claude Code</text>
+    </g>
+  </g>
+
+  <g transform="translate(650 48)" filter="url(#shadow)">
+    <rect width="485" height="294" rx="14" fill="#0d1527" stroke="#526580" stroke-opacity=".65"/>
+    <path d="M14 0h457a14 14 0 0 1 14 14v28H0V14A14 14 0 0 1 14 0z" fill="#202d47"/>
+    <circle cx="23" cy="21" r="5" fill="#f17885"/><circle cx="42" cy="21" r="5" fill="#ffc56f"/><circle cx="61" cy="21" r="5" fill="#6bdbb2"/>
+    <text x="184" y="26" font-family="Consolas,monospace" font-size="12" fill="#9cb0cd">feature.ts</text>
+    <g font-family="Consolas,monospace" font-size="15">
+      <text x="28" y="82" fill="#6e849f">12</text><text x="67" y="82" fill="#80caff">function</text><text x="144" y="82" fill="#e7f1ff"> reviewChange</text><text x="273" y="82" fill="#a9bad5">() {</text>
+      <rect x="57" y="96" width="372" height="32" rx="5" fill="#244950" opacity=".7"/>
+      <text x="28" y="119" fill="#6e849f">13</text><text x="72" y="119" fill="#7be4c1">return</text><text x="130" y="119" fill="#e7f1ff"> discuss(code);</text>
+      <text x="28" y="156" fill="#6e849f">14</text><text x="67" y="156" fill="#a9bad5">}</text>
+    </g>
+    <g transform="translate(126 159)">
+      <path d="M13 0h323a13 13 0 0 1 13 13v92a13 13 0 0 1-13 13H45l-17 16v-16H13A13 13 0 0 1 0 105V13A13 13 0 0 1 13 0z" fill="#f3f9ff"/>
+      <rect x="15" y="16" width="79" height="22" rx="11" fill="#d8f5e9"/>
+      <text x="27" y="31" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" font-weight="700" fill="#216a55">PASSO 2/6</text>
+      <text x="16" y="60" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#1b2f49">O que mudou aqui?</text>
+      <text x="16" y="84" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" fill="#56708b">Siga o raciocínio e decida no editor.</text>
+      <rect x="235" y="16" width="99" height="27" rx="13" fill="#276b64"/>
+      <text x="261" y="34" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" font-weight="700" fill="#ffffff">Entendi ✓</text>
+    </g>
+  </g>
+</svg>
