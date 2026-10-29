@@ -1,0 +1,14 @@
+extension/node_modules/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.session.json
+*.state.json
+*.events.jsonl
+*.presence.json
+*.cursor
+*.vsix
+!dist/pair-dude.vsix
