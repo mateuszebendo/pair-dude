@@ -6,6 +6,10 @@
   "publisher": "mateus-zebendo",
   "license": "MIT",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mateuszebendo/pair-dude.git"
+  },
   "engines": {
     "vscode": "^1.90.0"
   },
@@ -285,7 +289,7 @@
   },
   "scripts": {
     "check": "node scripts/check.mjs",
-    "package": "npm run check && vsce package --no-dependencies --allow-missing-repository --out ../dist/pair-dude.vsix"
+    "package": "npm run check && vsce package --no-dependencies --out ../dist/pair-dude.vsix"
   },
   "devDependencies": {
     "@vscode/vsce": "^3.2.1"
